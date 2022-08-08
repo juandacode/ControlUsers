@@ -1,0 +1,54 @@
+<section class="users">
+  <h1 >Lista de Usuarios</h1>
+  <hr>
+  <div class="container-users">
+    <div class="row">
+      <div class="col boton">
+        <button routerLink="/user" class="btn btn-primary">
+          <i class="fa fa-plus"></i>
+          Agregar</button>
+      </div>
+    </div>
+  </div>
+  <table *ngIf="users.length > 0; else notUsers" class="table mt-3">
+    <thead class="table-dark">
+      <tr>
+      <th>#</th>
+      <th>Nombre</th>
+      <th>Documento</th>
+      <th>Teléfono</th>
+      <th>Ciudad</th>
+      <th>Dirección</th>
+      <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <th scope="row">1</th>
+        <td >{{ user.name }} </td>
+        <td >{{ user.document }}</td>
+        <td >{{user.cellphone}} </td>
+        <td >{{ user.city }}</td>
+        <td >{{user.address }}</td>
+        <td><img [src]="imageEdit" alt=""><img [src]="imageDelete" (click)="deleteUser(user._id)" alt=""></td>
+      </tr>
+    </tbody>
+  </table>
+  <ng-template #notUsers>
+    <div class="alert alert-warning text-center mt-3 divelse" role="alert">
+      <h4 class="alert-heading">No hay Registros</h4>
+      <p class>
+        <i class="fa fa-exclamation fa-2x"></i>
+      </p>
+    </div>
+  </ng-template>
+
+  <div class="alert alert-info text-center mt-3" role="alert">
+    <h4 class="alert-heading"> Cargando</h4>
+    <p class>
+      <i class="fa fa-sync-alt fa-spin fa-2x"></i>
+    </p>
+    <p>Espere Por favor...</p>
+  </div>
+
+</section>

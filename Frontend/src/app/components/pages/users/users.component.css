@@ -1,0 +1,24 @@
+.users {
+  margin: 2rem 0;
+}
+.user-id{
+  font-weight: bold;
+}
+
+.boton {
+  display: flex;
+  justify-content: flex-end;
+}
+.user-id{
+  font-weight: bold;
+}
+img {
+  margin-right: 10px;
+  cursor: pointer;
+}
+.divelse {
+  width: 100%;
+}
+
+
+
